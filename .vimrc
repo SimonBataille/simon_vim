@@ -32,7 +32,7 @@ Plug 'mattn/emmet-vim'
 call plug#end()
 
 
-" We have to turn this stuff back on if we want all of our features.
+""" We have to turn this stuff back on if we want all of our features.
 syntax on " Syntax highlighting
 set formatoptions-=cro "Disable automatic comments when pasting
 
@@ -48,3 +48,38 @@ set smarttab " Let's tab key insert 'tab stops', and bksp deletes tabs. Insert â
 set softtabstop=4
 filetype indent on " Filetype auto-detection: Enable indentation rules that are file-type specific.
 filetype plugin on " Enable loading the plugin files for specific file
+
+
+""" User Interface Options
+set background=dark " Use colors that suit a dark background.
+set ruler " Always show cursor position.
+colorscheme delek " Change color scheme.
+set cursorline " Highlight the line currently under cursor.
+" Configure cursorline:
+hi cursorline cterm=none ctermbg=234 guibg=#303000
+set number " Show line numbers on the sidebar.
+
+
+""" Miscellaneous options
+set autoread " Automatically re-read files if unmodified inside Vim.
+set hidden " Hide files in the background instead of closing them.
+
+
+""" Search Options
+set ignorecase " case insensitive search
+set smartcase " If there are uppercase letters, become case-sensitive.
+set incsearch " live incremental searching
+set showmatch " live match highlighting
+set hlsearch " highlight matches
+set gdefault " use the `g` flag by default.
+" Clear match highlighting:
+noremap <leader><space> :noh<cr>:call clearmatches()<cr>
+" Very Magic - Use sane regex's when searching:
+nnoremap / /\v
+vnoremap / /\v
+
+
+""" Text Rendering Options
+set wrap " Enable line wrapping
+set scrolloff=10 " The number of screen lines to keep above and below the cursor.
+set linebreak " Avoid wrapping a line in the middle of a word.
