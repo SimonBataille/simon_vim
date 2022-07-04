@@ -27,7 +27,7 @@ call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
 
 " provides support for expanding abbreviations similar to emmet
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', { 'for': ['html', 'css'] }
 
 call plug#end()
 
@@ -83,3 +83,7 @@ vnoremap / /\v
 set wrap " Enable line wrapping
 set scrolloff=10 " The number of screen lines to keep above and below the cursor.
 set linebreak " Avoid wrapping a line in the middle of a word.
+
+
+""" Plugin settings:
+"let g:user_emmet_leader_key='\'
